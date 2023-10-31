@@ -1,13 +1,11 @@
-# Solicita um CPF ao usuário
+
 cpf = input("Digite um CPF (11 dígitos numéricos): ")
 
-# Remove espaços em branco e hifens
 cpf = cpf.replace(" ", "").replace("-", "")
 
 if cpf.isdigit() and len(cpf) == 11:
     cpf = [int(d) for d in cpf]
     
-    # Validação do primeiro dígito verificador
     total = 0
     for i in range(9):
         total += cpf[i] * (10 - i)
